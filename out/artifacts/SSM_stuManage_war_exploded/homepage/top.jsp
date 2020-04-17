@@ -16,9 +16,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 
   </head>
 
@@ -35,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				   <font face="SimSun" color="#6495ED" style="text-decoration:none" size="5">
   					  欢迎您!</font> <a style="cursor:pointer">
   				    <font color="red" size="5">
-  				          <a  href=""  onclick="gout(top.location.href='${pageContext.request.contextPath}/adminCtr/loginOut')"> 退出</a>
+  				          <a  href="${pageContext.request.contextPath}/admin/quit" target="_parent"> 退出</a>
   				    </font></a>
   				</td>
   			</tr>

@@ -17,7 +17,7 @@
         </h2>
         <form:form action="stu/editSave" modelAttribute="entity">
             <fieldset>
-                <legend>商品</legend>
+                <legend>学生</legend>
                <p>
                 <label for="name">学生姓名：</label>
                 <form:input path="name" size="50"/>

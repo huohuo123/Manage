@@ -8,7 +8,6 @@
 <link href="<c:url value="/bootstrap/css/main.css" />" type="text/css"
     rel="stylesheet" />
 <title>查看个人信息</title>
-<%-- <base href="<c:url value="/" />" /> --%>
 <link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>"  type="text/css" rel="stylesheet" />
 </head>
 <body>

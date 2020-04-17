@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				   <font face="SimSun" color="#6495ED" style="text-decoration:none" size="5">
   					  欢迎您!</font> <a style="cursor:pointer">
   				    <font color="red" size="5">
-  				          <a  href=""  onclick="gout(top.location.href='${pageContext.request.contextPath}/adminCtr/loginOut')"> 退出</a>
+  				          <a  href="${pageContext.request.contextPath}/admin/quit" target="_parent"> 退出</a>
   				    </font></a>
   				</td>
   			</tr>

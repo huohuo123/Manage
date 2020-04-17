@@ -7,15 +7,15 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <link href="<c:url value="/styles/main.css" />" type="text/css"
           rel="stylesheet" />
-    <title>修改个人登录信息</title>
+    <title>修改个人密码</title>
     <base href="<c:url value="/" />" />
 </head>
 <body>
 <div class="main">
     <h2 class="title">
-        <span>修改个人登录信息</span>
+        <span>修改个人密码</span>
     </h2>
-    <form:form action="stu/modify" modelAttribute="entity">
+    <form:form action="tea/modify" modelAttribute="entity">
 
         <fieldset>
             <legend>修改密码</legend>

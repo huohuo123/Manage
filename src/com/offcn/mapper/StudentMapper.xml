@@ -49,17 +49,36 @@
     </select>
 
     <update id="updateByPrimaryKey" parameterType="com.offcn.pojo.Student">
-    update student
-    set name = #{name,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=VARCHAR},
-      address = #{address,jdbcType=VARCHAR},
-      tel = #{tel,jdbcType=VARCHAR},
-      classid = #{classid,jdbcType=INTEGER},
-      usertype = #{usertype,jdbcType=INTEGER},
-      password = #{password,jdbcType=VARCHAR},
-      loginname = #{loginname,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+        update student
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                address = #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="tel != null">
+                tel = #{tel,jdbcType=VARCHAR},
+            </if>
+            <if test="classid != null">
+                classid = #{classid,jdbcType=INTEGER},
+            </if>
+            <if test="usertype != null">
+                usertype = #{usertype,jdbcType=INTEGER},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="loginname != null">
+                loginname = #{loginname,jdbcType=VARCHAR}
+            </if>
+        </set>
+
+        where id = #{id,jdbcType=INTEGER}
+    </update>
 
     <select id="getStuByCid" parameterType="int" resultType="com.offcn.pojo.StudentExt">
      select s.*,c.name classname from student s,classes c where s.classid=c.id and c.id=#{int}

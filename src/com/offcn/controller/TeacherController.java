@@ -1,17 +1,11 @@
 package com.offcn.controller;
 
-import com.offcn.pojo.CourseExt;
-import com.offcn.pojo.Grade;
-import com.offcn.pojo.StudentView;
-import com.offcn.pojo.Teacher;
+import com.offcn.pojo.*;
 import com.offcn.service.TeacherService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
@@ -190,6 +184,37 @@ public class TeacherController {
 		List<CourseExt> cslist=teacherService.getMyCoursesTeacher( teacher.getId());
 		model.addAttribute("cslist", cslist);
 		return "teacher/cslist";
+	}
+
+
+	@RequestMapping("/modifyInfo")
+	public String modifyInfo(Model model, Teacher entity, HttpServletRequest req) {
+		HttpSession session = req.getSession();
+
+		Teacher teacher = (Teacher) session.getAttribute("user");
+
+		model.addAttribute("entity", teacher);
+		return "teacher/mpass";
+
+	}
+
+	@RequestMapping(value = "/modify", produces = "text/html;charset=utf8")
+	@ResponseBody
+	public String modify(Model model, Teacher entity, HttpServletRequest req) {
+		HttpSession session = req.getSession();
+
+		Teacher teacher = (Teacher) session.getAttribute("user");
+
+		//两者不等于，则去更新代码到数据库
+		if (null != entity.getPassword() && entity.getPassword() != teacher.getPassword()) {
+			Teacher teacherUpdate=new Teacher();
+			teacherUpdate.setLoginname(entity.getLoginname());
+			teacherUpdate.setPassword(entity.getPassword());
+			teacherUpdate.setId(teacher.getId());
+			teacherService.update(teacherUpdate);
+			return "更新成功";
+		}
+		return "更新失败";
 	}
     
     

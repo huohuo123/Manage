@@ -56,7 +56,7 @@
                     </li>
 
                     <li>
-                        <a href="homepage/test.jsp" target="right"><i class="fa fa-bar-chart-o"></i>修改密码</a>
+                        <a href="tea/modifyInfo" target="right"><i class="fa fa-bar-chart-o"></i>修改密码</a>
                     </li>
                 </c:if>
 
@@ -72,7 +72,7 @@
                         <a href="stu/getXuXiu" target="right"><i class="fa fa-qrcode "></i>选课</a>
                     </li>
                     <li>
-                        <a href="stu/test.jsp" target="right"><i class="fa fa-bar-chart-o"></i>修改密码</a>
+                        <a href="stu/modifyInfo" target="right"><i class="fa fa-bar-chart-o"></i>修改密码</a>
                     </li>
                 </c:if>
             </ul>

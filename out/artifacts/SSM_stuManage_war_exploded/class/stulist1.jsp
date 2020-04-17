@@ -32,7 +32,6 @@
                     <td>${entity.name}</td>
                 </tr>
                 </c:forEach>
-            <%-- </c:forEach> --%>
         </table>
         <p style="color: red">${message}</p>
         <!--分页 -->
