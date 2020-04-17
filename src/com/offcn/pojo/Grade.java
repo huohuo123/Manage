@@ -1,9 +1,5 @@
 package com.offcn.pojo;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-
 public class Grade {
     private Integer id;
 
@@ -13,14 +9,14 @@ public class Grade {
 
     private Integer tid;
 
-    @NotNull
-    @Min(value=0,message="成绩最小值为{value}")    //最小值
-    @Max(value=30,message="成绩最大值为{value}")    //最大值
+    /**
+     * 平时成绩
+     */
     private Double pgrade;
 
-    @NotNull
-    @Min(value=0,message="成绩最小值为{value}")    //最小值
-    @Max(value=70,message="成绩最大值为{value}")    //最大值
+    /**
+     * 考试成绩
+     */
     private Double kgrade;
 
     private Double zgrade;

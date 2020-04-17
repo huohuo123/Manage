@@ -29,6 +29,4 @@ public interface StudentService {
 
 	List<CourseExt> getMycourses(int classid, int stuid);
 
-	List<GradeExt> getGradeInfo(Integer studentId);
-
 }

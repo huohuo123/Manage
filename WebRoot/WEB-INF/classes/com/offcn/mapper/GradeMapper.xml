@@ -20,11 +20,4 @@
       #{zgrade,jdbcType=DOUBLE})
   </insert>
 
-  <select id="getGradeInfo" parameterType="int" resultType="GradeExt">
-     select c.`name` as courseName,t.`name` as teacherName,g.`pgrade`,g.`kgrade`,g.`zgrade` from grade g
-        left join course c on g.`cid`=c.`id`
-        left join teacher t on g.`tid`=t.`id`
-        left join student s on g.`sid`=s.`id`
-        where s.`id`=#{studentId}
-  </select>
 </mapper>

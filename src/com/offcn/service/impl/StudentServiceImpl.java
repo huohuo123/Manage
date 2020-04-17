@@ -1,6 +1,5 @@
 package com.offcn.service.impl;
 
-import com.offcn.mapper.GradeMapper;
 import com.offcn.mapper.ScMapper;
 import com.offcn.mapper.StudentMapper;
 import com.offcn.pojo.*;
@@ -24,9 +23,6 @@ public class StudentServiceImpl implements StudentService {
 
 	@Resource
 	ScMapper scMapper;
-
-	@Resource
-	GradeMapper gradeMapper;
 
 	@Override
 	public List<Student> getStudentPager(int pageNO, int size) {
@@ -102,39 +98,6 @@ public class StudentServiceImpl implements StudentService {
 		return ctlist;
 	}
 
-	@Override
-	public List<GradeExt> getGradeInfo(Integer studentId) {
-		List<GradeExt> gradeList = gradeMapper.getGradeInfo(studentId);
-		return gradeList;
-	}
-	
-	/*@Override
-	public Student getMyInfo(int id) {
-		Student student = studentMapper.getMyInfo(id);
-		return student;
-	}
 
-	@Override
-	public void updatePwd(Login login) {
-		sMapper.updatePwd(login);
-	}
-	
-	@Override
-	public int getMyCoursesCount(int id) {
-		int i=studentMapper.getMyCoursesCount(id);
-		return i;
-	}
-
-	@Override
-	public List<Student> getMyCourses(int id, int pageNum, int size,String type) {
-		int skip=(pageNum-1)*size;
-		List<Student> stulist = studentMapper.getMyCourses(id, skip, size,type);
-		return stulist;
-	}
-
-	@Override
-	public List<Grade> getGrade(int id) {
-		return studentMapper.getGrade(id);
-	}*/
 
 }

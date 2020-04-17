@@ -2,6 +2,7 @@ package com.offcn.controller;
 
 import com.offcn.pojo.*;
 import com.offcn.service.ClassesService;
+import com.offcn.service.GradeService;
 import com.offcn.service.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +30,9 @@ public class StudentController {
 	
 	@Resource
 	ClassesService classesService;
+
+	@Resource
+	GradeService gradeService;
 	
 	
 	@RequestMapping("/list")
@@ -165,7 +169,7 @@ public class StudentController {
 	public String getStuGrade(Model model,HttpServletRequest req){
 		HttpSession session=req.getSession();
 		Student student=(Student) session.getAttribute("user");
-		List<GradeExt> grlist=studentService.getGradeInfo( student.getId());
+		List<GradeExt> grlist=gradeService.getGradeInfo( student.getId());
 		model.addAttribute("grlist", grlist);
 		return "student/grlist";
 	}

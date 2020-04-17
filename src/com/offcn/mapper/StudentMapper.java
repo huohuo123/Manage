@@ -1,6 +1,7 @@
 package com.offcn.mapper;
 
 import com.offcn.pojo.CourseExt;
+import com.offcn.pojo.GradeExt;
 import com.offcn.pojo.Student;
 import com.offcn.pojo.StudentExt;
 import org.apache.ibatis.annotations.Param;
@@ -29,5 +30,7 @@ public interface StudentMapper {
 	List<CourseExt> getBxCourse(Student studentInfo);
 
 	List<CourseExt> getxxCourse(int stuid);
+
+
 
 }

@@ -24,20 +24,17 @@
             <c:forEach var="entity" items="${grlist}" varStatus="status">
                 <tr>
                     <td>
-                        <input type="checkbox" name="cou" value="${entity.id}_${entity.tId}"/>
+                        <input type="checkbox" name="cou" value="${entity.id}"/>
                     </td>
-                    <td>
-                        <label>${entity.name}@@@@@@@@@@@${entity.id}_${entity.tId}</label>
-                    </td>
-                    <td>
-                        <label>${entity.tname}</label>
-                    </td>
+                    <td>${entity.courseName}</td>
+                    <td>${entity.pgrade}</td>
+                    <td>${entity.kgrade}</td>
+                    <td>${entity.zgrade}</td>
+                    <td>${entity.teacherName}</td>
                 </tr>
             </c:forEach>
         </table>
-        <p>
-            <input type="submit" value="提交"/>
-        </p>
+
         <p style="color: red">${message}</p>
         <!--分页 -->
         <script type="text/javascript" src="<c:url value="https://code.jquery.com/jquery-2.1.1.min.js"/>" ></script>

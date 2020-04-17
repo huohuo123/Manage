@@ -1,13 +1,9 @@
 package com.offcn.mapper;
 
-import java.util.List;
-
-import com.offcn.pojo.CourseExt;
-import com.offcn.pojo.Student;
+import com.offcn.pojo.Course;
 import org.apache.ibatis.annotations.Param;
 
-import com.offcn.pojo.Classes;
-import com.offcn.pojo.Course;
+import java.util.List;
 
 public interface CourseMapper {
 	int insert(Course record);
@@ -22,7 +18,7 @@ public interface CourseMapper {
 
 	int update(Course entity);
 
-	List<CourseExt> getBxCourse(Course course);
+	// List<CourseExt> getBxCourse(Course course);
 
 	//public List<CourseExt> getMyCourse(int id);
 

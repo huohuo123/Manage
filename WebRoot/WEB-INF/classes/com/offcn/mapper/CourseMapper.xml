@@ -42,13 +42,13 @@
     </update>
 
     <!-- 查看课表 -->
-    <select id="getBxCourse" parameterType="Course" resultType="com.offcn.pojo.CourseExt">
-     select c.*,t.name tname from ctc
-    left join teacher t on ctc.tid=t.id
-    left join student s on ctc.claid=s.classid
-    left join course c on ctc.couid=c.id
-     where  c.type=0  and s.classid=#{classid} and s.id=#{studentid}
-  </select>
+<!--    <select id="getBxCourse" parameterType="Course" resultType="com.offcn.pojo.CourseExt">-->
+<!--     select c.*,t.name tname from ctc-->
+<!--    left join teacher t on ctc.tid=t.id-->
+<!--    left join student s on ctc.claid=s.classid-->
+<!--    left join course c on ctc.couid=c.id-->
+<!--     where  c.type=0  and s.classid=#{classid} and s.id=#{studentid}-->
+<!--  </select>-->
 
 
     <!--  <select id="getMyCourse" resultType="com.offcn.pojo.CourseExt" parameterType="int">
