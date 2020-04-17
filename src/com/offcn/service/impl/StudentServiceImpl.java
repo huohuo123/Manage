@@ -76,7 +76,6 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public List<CourseExt> getXuxiu(int classid) {
-		// TODO Auto-generated method stub
 		return studentMapper.getXuxiu(classid);
 	}
 
@@ -97,6 +96,8 @@ public class StudentServiceImpl implements StudentService {
 		ctlist.addAll(xxlist);
 		return ctlist;
 	}
+
+
 
 	@Override
 	public int modifyPassword(Student entity,int stuid){

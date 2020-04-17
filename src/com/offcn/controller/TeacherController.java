@@ -1,5 +1,6 @@
 package com.offcn.controller;
 
+import com.offcn.pojo.CourseExt;
 import com.offcn.pojo.Grade;
 import com.offcn.pojo.StudentView;
 import com.offcn.pojo.Teacher;
@@ -141,7 +142,7 @@ public class TeacherController {
        
     }
 
-    @RequestMapping("getMyStu")
+    @RequestMapping("/getMyStu")
     public String getMyStu(Model model,HttpServletRequest req){
     	HttpSession session=req.getSession();
     	Teacher teacher=(Teacher) session.getAttribute("user");
@@ -174,7 +175,22 @@ public class TeacherController {
     	}
     	return "redirect:getMyStu";
     }
-    
+
+
+	/**
+	 * 学生查看课程
+	 * @param model
+	 * @param req
+	 * @return
+	 */
+	@RequestMapping("/getStuCourse")
+	public String getStuCourse(Model model,HttpServletRequest req){
+		HttpSession session=req.getSession();
+		Teacher teacher=(Teacher) session.getAttribute("user");
+		List<CourseExt> cslist=teacherService.getMyCoursesTeacher( teacher.getId());
+		model.addAttribute("cslist", cslist);
+		return "teacher/cslist";
+	}
     
     
 }

@@ -11,11 +11,8 @@
 
     <title></title>
     <link href="styles/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-    <!-- FONTAWESOME STYLES-->
     <link href="styles/bootstrap/css/font-awesome.css" rel="stylesheet"/>
-    <!-- CUSTOM STYLES-->
     <link href="styles/bootstrap/css/custom.css" rel="stylesheet"/>
-    <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <style type="text/css">
         .sidebar-collapse .nav {
@@ -47,7 +44,7 @@
 
                 <c:if test="${user.usertype==3}">
                     <li>
-                        <a href="homepage/test2.jsp" target="right"><i class="fa fa-desktop "></i>查看课表 </a>
+                        <a href="tea/getStuCourse" target="right"><i class="fa fa-desktop "></i>查看课表 </a>
                     </li>
 
                     <li>

@@ -29,7 +29,7 @@
                     <td>${entity.pgrade}</td>
                     <td>${entity.kgrade}</td>
                     <td>
-                        <a href="<c:url value="/grade"/>delete/${entity.id}?pageNO=${pageNO}" class="abtn">删除</a>
+                        <a href="<c:url value="/grade/"/>delete/${entity.id}?pageNO=${pageNO}" class="abtn">删除</a>
                         <a href="edit/${entity.id}" class="abtn">编辑</a>
                     </td>
                 </tr>
@@ -61,7 +61,7 @@
 
            //回调方法
            function handlePaginationClick(new_page_index, pagination_container){
-               location.href="<c:url value="/grade"/>list?pageNO="+(new_page_index+1);
+               location.href="<c:url value="/grade/"/>list?pageNO="+(new_page_index+1);
            }
         </script>
     </form>

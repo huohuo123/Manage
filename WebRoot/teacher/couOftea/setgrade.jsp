@@ -19,12 +19,12 @@
                 <label for="name">${sname}</label>
             </p>
             <p>
-                <label for="type">平时成绩</label>
+                <label for="pgrade">平时成绩</label>
                 <form:input path="pgrade" size="50"/>
                 <form:errors path="pgrade" cssClass="error"></form:errors>
             </p>
             <p>
-                <label for="type">考试成绩</label>
+                <label for="kgrade">考试成绩</label>
                 <form:input path="kgrade" size="50"/>
                 <form:errors path="kgrade" cssClass="error"></form:errors>
             </p>

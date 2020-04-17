@@ -1,11 +1,11 @@
 package com.offcn.pojo;
 
 /**
- * @Author:HuoYaJing
+ * @Author:hyz
  * @Description:
  * @Date: Create in 15:42 2020-04-13
  */
-public class GradeExt extends Grade{
+public class GradeExt extends Grade {
 	private String courseName;
 	private String teacherName;
 	private String studentName;

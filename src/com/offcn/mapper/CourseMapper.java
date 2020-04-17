@@ -18,9 +18,4 @@ public interface CourseMapper {
 
 	int update(Course entity);
 
-	// List<CourseExt> getBxCourse(Course course);
-
-	//public List<CourseExt> getMyCourse(int id);
-
-
 }

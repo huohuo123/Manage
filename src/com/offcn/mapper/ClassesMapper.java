@@ -8,34 +8,20 @@ import com.offcn.pojo.Classes;
 
 public interface ClassesMapper {
 
-    int deleteByPrimaryKey(Integer id);
+	int insert(Classes record);
 
-    int insert(Classes record);
+	List<Classes> getAllClasses();
 
-    int insertSelective(Classes record);
+	List<Classes> getClassPager(@Param("skip") int skip, @Param("size") int size);
 
+	Classes getCLassId(int id);
 
-    Classes selectByPrimaryKey(Integer id);
+	int getClassesCount();
 
+	int delete(int id);
 
-    int updateByPrimaryKeySelective(Classes record);
+	int update(Classes entity);
 
-    int updateByPrimaryKey(Classes record);
-    
-    List<Classes> getAllClasses();
-    
-    
-    
-    public List<Classes> getClassPager(@Param("skip") int skip, @Param("size") int size);
+	Classes getStuByid(int id);
 
-	public Classes getCLassId(int id);
-
-	public int getClassesCount();
-
-	public int delete(int id);
-
-	public int update(Classes entity);
-	
-	public Classes getStuByid(int id);
-    
 }

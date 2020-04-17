@@ -138,8 +138,6 @@ public class ClassesController {
 
 	@RequestMapping("search1/{id}")
 	public String search1(@PathVariable int id, Model model) {
-    	/*List<StudentExt> slist=studentService.getStuByCid(id);
-    	model.addAttribute("slist", slist);*/
 		Classes classes = classesService.getStuByid(id);
 		model.addAttribute("classes", classes);
 		return "class/stulist1";

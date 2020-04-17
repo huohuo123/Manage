@@ -23,13 +23,13 @@ public class ClassesServiceImpl implements ClassesService {
 
 	@Override
 	public List<Classes> getAllClasses() {
-		// TODO Auto-generated method stub
+
 		return classesMapper.getAllClasses();
 	}
 
 	@Override
 	public List<Classes> getClassPager(int pageNO, int size) {
-		// TODO Auto-generated method stub
+
 		int skip = (pageNO - 1) * size;
 		List<Classes> classList = classesMapper.getClassPager(skip, size);
 		for (Classes classes : classList) {
@@ -45,25 +45,25 @@ public class ClassesServiceImpl implements ClassesService {
 
 	@Override
 	public Classes getCLassId(int id) {
-		// TODO Auto-generated method stub
+
 		return classesMapper.getCLassId(id);
 	}
 
 	@Override
 	public int getClassesCount() {
-		// TODO Auto-generated method stub
+
 		return classesMapper.getClassesCount();
 	}
 
 	@Override
 	public int insert(Classes entity) {
-		// TODO Auto-generated method stub
+
 		return classesMapper.insert(entity);
 	}
 
 	@Override
 	public int delete(int id) {
-		// TODO Auto-generated method stub
+
 		int row = classesMapper.delete(id);
 		return row;
 	}
@@ -80,13 +80,13 @@ public class ClassesServiceImpl implements ClassesService {
 
 	@Override
 	public int update(Classes entity) {
-		// TODO Auto-generated method stub
+
 		return classesMapper.update(entity);
 	}
 
 	@Override
 	public Classes getStuByid(int id) {
-		// TODO Auto-generated method stub
+
 		return classesMapper.getStuByid(id);
 	}
 

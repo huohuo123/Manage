@@ -2,9 +2,7 @@ package com.offcn.service.impl;
 
 import com.offcn.mapper.GradeMapper;
 import com.offcn.mapper.TeacherMapper;
-import com.offcn.pojo.Grade;
-import com.offcn.pojo.StudentView;
-import com.offcn.pojo.Teacher;
+import com.offcn.pojo.*;
 import com.offcn.service.TeacherService;
 import org.springframework.stereotype.Service;
 
@@ -17,32 +15,31 @@ import java.util.List;
  * @version 1.0
  */
 @Service
-public class TeacherServiceImpl implements TeacherService{
+public class TeacherServiceImpl implements TeacherService {
 
-	 //自动装配
-    @Resource
-    TeacherMapper teacherMapper;
-    @Resource
-    GradeMapper gradeMapper;
+	@Resource
+	TeacherMapper teacherMapper;
+	@Resource
+	GradeMapper gradeMapper;
 
 	@Override
 	public int deletes(int[] ids) {
-		int rows=0;
-        for (int id : ids) {
-            rows+=delete(id);
-        }
-     return rows;
+		int rows = 0;
+		for (int id : ids) {
+			rows += delete(id);
+		}
+		return rows;
 	}
 
 	@Override
 	public List<Teacher> getTeacherPager(int pageNO, int size) {
-		int skip=(pageNO-1)*size;
-		List<Teacher> teacherList= teacherMapper.getTeacherPager(skip, size);
-		for (Teacher teacherInfo:teacherList){
-			if (teacherInfo.getType().equals("0")){
+		int skip = (pageNO - 1) * size;
+		List<Teacher> teacherList = teacherMapper.getTeacherPager(skip, size);
+		for (Teacher teacherInfo : teacherList) {
+			if (teacherInfo.getType().equals("0")) {
 				teacherInfo.setType("普通教师");
 			}
-			if (teacherInfo.getType().equals("1")){
+			if (teacherInfo.getType().equals("1")) {
 				teacherInfo.setType("金牌教师");
 			}
 		}
@@ -86,15 +83,10 @@ public class TeacherServiceImpl implements TeacherService{
 	}
 
 	@Override
-	public int getMyStuCount(int id) {
-		return 0;
-	}
-
-	@Override
 	public List<StudentView> getMystus(int tid) {
-		List<StudentView> xxslist=teacherMapper.getxxStudent(tid);
-		List<StudentView> bxslist=teacherMapper.getbxStudent(tid);
-		List<StudentView> slist=new ArrayList<StudentView>();
+		List<StudentView> xxslist = teacherMapper.getxxStudent(tid);
+		List<StudentView> bxslist = teacherMapper.getbxStudent(tid);
+		List<StudentView> slist = new ArrayList<StudentView>();
 		slist.addAll(xxslist);
 		slist.addAll(bxslist);
 		return slist;
@@ -104,5 +96,10 @@ public class TeacherServiceImpl implements TeacherService{
 	public int insertGrade(Grade grade) {
 		return gradeMapper.insertGrade(grade);
 	}
-   
+
+	@Override
+	public List<CourseExt> getMyCoursesTeacher(int teacherId) {
+		return teacherMapper.getMyCoursesTeacher(teacherId);
+	}
+
 }

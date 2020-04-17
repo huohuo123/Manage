@@ -77,14 +77,5 @@ public class CourseServiceImpl implements CourseService {
 		ctcMapper.insertBatch(ctclist);
 	}
 
-	/*
-	 * @see com.offcn.service.CourseService#getMyCourse(int)
-	 */
-	/*@Override
-	public List<CourseExt> getMyCourse(int id) {
-		// TODO Auto-generated method stub
-		return courseMapper.getMyCourse(id);
-	}*/
-
 
 }

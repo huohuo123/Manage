@@ -45,8 +45,8 @@ public class StudentController {
 	    model.addAttribute("slist", slist);
 		return "student/list";
 	}
-	
-	//重定向一定要写绝对路径eg:redirect:/stu/list
+
+
 	@RequestMapping("/delete/{id}")
 	public String  delete(@PathVariable int id,Model model) {
 		studentService.deleteByPrimaryKey(id);

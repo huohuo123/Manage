@@ -73,8 +73,6 @@ public class CourseController {
      */
     @RequestMapping("/deletes")
     public String deletes(Model model,@RequestParam int[] id,@RequestParam(required=false,defaultValue="1") int pageNO,RedirectAttributes redirectAttributes){
-        //执行删除
-    	System.out.println("批量删除"+id.toString());
         int rows=courseService.deletes(id);
         if(rows>0)
         {

@@ -1,21 +1,29 @@
 package com.offcn.pojo;
 
+/**
+ * @author hyz
+ * @version 1.0
+ */
 public class Course {
-    private Integer id;
+	private Integer id;
 
-    private String name;
+	private String name;
 
-    private String type;
+	private String type;
 
-    private Integer classid;
+	private Integer classid;
 
-    private Integer studentid;
-    
-    //排课用
-    private Teacher teacher;
-    
-    // 排课用
-     private String classes;
+	private Integer studentid;
+
+	/**
+	 * 排课用
+	 */
+	private Teacher teacher;
+
+	/**
+	 * 排课用
+	 */
+	private String classes;
 
 	public Integer getClassid() {
 		return classid;
@@ -34,28 +42,28 @@ public class Course {
 	}
 
 	public Integer getId() {
-        return id;
-    }
+		return id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	public void setName(String name) {
+		this.name = name == null ? null : name.trim();
+	}
 
-    public String getType() {
-        return type;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
-    }
+	public void setType(String type) {
+		this.type = type == null ? null : type.trim();
+	}
 
 	public Teacher getTeacher() {
 		return teacher;
@@ -72,7 +80,6 @@ public class Course {
 	public void setClasses(String classes) {
 		this.classes = classes;
 	}
-    
-    
-    
+
+
 }

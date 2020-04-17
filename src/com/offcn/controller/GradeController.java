@@ -38,25 +38,24 @@ public class GradeController {
 	 *
 	 * @param model
 	 * @param id
-	 * @param pageNO
 	 * @param redirectAttributes
 	 * @return
 	 */
 	@RequestMapping("/delete/{id}")
-	public String deleteGrade(Model model, @PathVariable int id, @RequestParam(required = false, defaultValue = "1") int pageNO, RedirectAttributes redirectAttributes) {
+	public String deleteGrade(Model model, @PathVariable int id, RedirectAttributes redirectAttributes) {
 		if (gradeService.delete(id) > 0) {
 			redirectAttributes.addFlashAttribute("message", "删除成功！");
 		} else {
 			redirectAttributes.addFlashAttribute("message", "删除失败！");
 		}
-		return "redirect:/grade/getStuGrade?pageNO=" + pageNO;
+		return "redirect:/grade/getStuGrade";
 	}
 
 	/**
 	 * 删除多个学生成绩对象Action
 	 */
 	@RequestMapping("/deletes")
-	public String deletes(Model model, @RequestParam int[] id, @RequestParam(required = false, defaultValue = "1") int pageNO, RedirectAttributes redirectAttributes) {
+	public String deletes(Model model, @RequestParam int[] id, RedirectAttributes redirectAttributes) {
 		//执行删除
 		System.out.println("批量删除" + id.toString());
 		int rows = gradeService.deletes(id);
@@ -65,7 +64,7 @@ public class GradeController {
 		} else {
 			redirectAttributes.addFlashAttribute("message", "删除失败！");
 		}
-		return "redirect:/tea/list?pageNO=" + pageNO;
+		return "redirect:/grade/getStuGrade";
 	}
 
 	/**

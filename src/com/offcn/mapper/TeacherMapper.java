@@ -1,48 +1,35 @@
 package com.offcn.mapper;
 
+import com.offcn.pojo.CourseExt;
 import com.offcn.pojo.StudentView;
 import com.offcn.pojo.Teacher;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
-
 public interface TeacherMapper {
 
-    int deleteByPrimaryKey(Integer id);
+	int insert(Teacher record);
 
-    int insert(Teacher record);
+	List<Teacher> getTeacherPager(@Param("skip") int skip, @Param("size") int size);
 
-    int insertSelective(Teacher record);
+	Teacher getTeacherId(int id);
 
+	int getTeacherCount();
 
-    Teacher selectByPrimaryKey(Integer id);
+	int delete(int id);
 
+	int update(Teacher entity);
 
-    int updateByPrimaryKeySelective(Teacher record);
+	List<Teacher> getAllTeacher();
 
-    int updateByPrimaryKey(Teacher record);
-    
-    
-    public List<Teacher> getTeacherPager(@Param("skip") int skip, @Param("size") int size);
+	Teacher tealogin(Teacher teacher);
 
-	public Teacher getTeacherId(int id);
-
-	public int getTeacherCount();
-
-	public int delete(int id);
-
-	public int update(Teacher entity);
-	
-	public List<Teacher> getAllTeacher();
-	
-	public Teacher loginTea(Teacher tea);
-	
-	public Teacher tealogin(Teacher teacher);
-	
 	List<StudentView> getxxStudent(int tid);
-	
+
 	List<StudentView> getbxStudent(int tid);
-	
-    
+
+	List<CourseExt> getMyCoursesTeacher(int teacherId);
+
+
 }

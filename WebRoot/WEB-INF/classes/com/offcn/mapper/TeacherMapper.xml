@@ -79,6 +79,8 @@
       select c.name as couname,c.id as cid,s.* from teacher t,student s,ctc,course c 
     where  c.type=0  and  t.id=#{id} and ctc.claid=s.classid and  ctc.couid=c.id and ctc.tid=t.id;
     </select>
+
+
   
   <!-- <sql id="Example_Where_Clause">
     <where>
