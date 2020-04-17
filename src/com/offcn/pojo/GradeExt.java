@@ -8,6 +8,15 @@ package com.offcn.pojo;
 public class GradeExt extends Grade{
 	private String courseName;
 	private String teacherName;
+	private String studentName;
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
 
 	public String getCourseName() {
 		return courseName;

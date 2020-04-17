@@ -17,7 +17,6 @@
                 <th><input type="checkbox" id="chbAll"></th>
                 <th>课程名称</th>
                 <th>代课教师</th>
-                <!-- <th>操作</th> -->
             </tr>
             <c:forEach var="entity" items="${colist}" varStatus="status">
                 <tr>

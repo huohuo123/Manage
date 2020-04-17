@@ -23,4 +23,12 @@ public interface GradeMapper {
 
 	List<GradeExt> getGradeInfo(Integer studentId);
 
+	List<GradeExt> getGradeInfoTeacher(Integer teacherId);
+
+	int delete(int id);
+
+	GradeExt getGradeId(int id);
+
+	int update(Grade entity);
+
 }

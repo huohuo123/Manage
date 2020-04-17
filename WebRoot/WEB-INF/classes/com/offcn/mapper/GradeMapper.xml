@@ -20,4 +20,25 @@
       #{zgrade,jdbcType=DOUBLE})
   </insert>
 
+
+  <delete id="delete">
+        delete from grade where id=#{id}
+    </delete>
+
+    <update id="update" parameterType="Grade">
+        update grade
+        <set>
+            <if test="pgrade != null">
+                pgrade = #{pgrade,jdbcType=Double},
+            </if>
+            <if test="ggrade != null">
+                ggrade = #{ggrade,jdbcType=Double},
+            </if>
+            <if test="zgrade != null">
+                zgrade = #{zgrade,jdbcType=Double},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
 </mapper>

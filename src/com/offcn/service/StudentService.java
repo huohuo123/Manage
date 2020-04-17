@@ -29,4 +29,8 @@ public interface StudentService {
 
 	List<CourseExt> getMycourses(int classid, int stuid);
 
+	int modifyPassword(Student entity,int stuid);
+
+
+
 }

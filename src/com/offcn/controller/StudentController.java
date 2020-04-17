@@ -92,8 +92,7 @@ public class StudentController {
 		}
 		
 	}
-	
-	//edit/${entity.id}
+
 	@RequestMapping("/edit/{id}")
 	public String add(Model model,@PathVariable int id) {
 		List<Classes> clist=classesService.getAllClasses();
@@ -173,5 +172,17 @@ public class StudentController {
 		model.addAttribute("grlist", grlist);
 		return "student/grlist";
 	}
+
+	@RequestMapping("/modifyPassword")
+	public String modifyPassword(Model model,@ModelAttribute("entity") @Valid Student entity,HttpServletRequest req){
+		HttpSession session=req.getSession();
+		Student student=(Student) session.getAttribute("user");
+		studentService.modifyPassword(entity,student.getId());
+
+		return "student/mpass";
+	}
+
+
+
 	
 }

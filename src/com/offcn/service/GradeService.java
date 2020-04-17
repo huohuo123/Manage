@@ -1,5 +1,6 @@
 package com.offcn.service;
 
+import com.offcn.pojo.Grade;
 import com.offcn.pojo.GradeExt;
 
 import java.util.List;
@@ -12,4 +13,14 @@ import java.util.List;
 public interface GradeService {
 
 	List<GradeExt> getGradeInfo(Integer studentId);
+
+	List<GradeExt> getGradeInfoTeacher(Integer teacherId);
+
+	int delete(int id);
+
+	int deletes(int[] ids);
+
+	GradeExt getGradeId(Integer id);
+
+	int update(Grade entity);
 }

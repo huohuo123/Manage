@@ -98,6 +98,14 @@ public class StudentServiceImpl implements StudentService {
 		return ctlist;
 	}
 
+	@Override
+	public int modifyPassword(Student entity,int stuid){
+
+		Student student=studentMapper.selectByPrimaryKey(stuid);
+
+		return 1;
+	}
+
 
 
 }

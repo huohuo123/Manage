@@ -38,13 +38,8 @@ public class CourseController {
 	TeacherService teacherService; 
 	@Resource
 	ClassesService classesService;
-	
-   /* @Resource
-	CtcService ctcService;*/
-    /* @Resource
-     GradeService gradeService;*/
 
-	 /*
+	 /**
      * 列表与分页Action
      */
     @RequestMapping("/list")
@@ -59,7 +54,7 @@ public class CourseController {
      }
 
 
-    /*
+    /**
      * 删除单个对象Action
      */
     @RequestMapping("/delete/{id}")
@@ -73,7 +68,7 @@ public class CourseController {
         return "redirect:/cou/list?pageNO="+pageNO;
     }
     
-    /*
+    /**
      * 删除多个对象Action
      */
     @RequestMapping("/deletes")
@@ -90,7 +85,7 @@ public class CourseController {
         return "redirect:/cou/list?pageNO="+pageNO;
     }
     
-    /*
+    /**
      * 添加
      */
     @RequestMapping("/add")
@@ -99,7 +94,7 @@ public class CourseController {
         return "course/add";
     }
     
-    /*
+    /**
      * 添加保存
      */
     @RequestMapping("/addSave")
@@ -117,7 +112,7 @@ public class CourseController {
     }
 
     
-    /*
+    /**
      * 编辑
      */
     @RequestMapping("/edit/{id}")
@@ -126,7 +121,7 @@ public class CourseController {
         return "course/edit";
     }
     
-    /*
+    /**
      * 编辑保存
      */
     @RequestMapping("/editSave")
@@ -144,9 +139,14 @@ public class CourseController {
         }
        
     }
-    
-    //排课
-   @RequestMapping("/setTeacher/{id}")
+
+	/**
+	 * 排课
+	 * @param model
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/setTeacher/{id}")
     public String setTeacher(Model model,@PathVariable int id){
     	Course course=courseService.getCourseId(id);
     	model.addAttribute("entity",course);

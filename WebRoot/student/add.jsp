@@ -51,10 +51,6 @@
             </p>
             <p>
                 <label for="classid">班级</label>
-                <%-- <form:select path="productType.id">
-                     <form:option value="0">--请选择--</form:option>
-                     <form:options items="${productTypes}"  itemLabel="name" itemValue="id"/>
-                </form:select> --%>
                 <form:select path="classid">
                    <form:option value="0">--请选择班级--</form:option>
                    <form:options items="${clist}" itemLabel="name" itemValue="id"></form:options>
